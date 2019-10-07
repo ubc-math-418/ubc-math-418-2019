@@ -1,0 +1,20 @@
+chmod a+x marktex
+
+for d in notes/*/ ; do
+  echo "building notes for $d";
+  chmod u+x "${d}build";
+  ${d}build
+  if [ $? != 0 ]; then
+    echo "building notes for $d failed; aborting.";
+    exit 1;
+  fi
+done
+
+rm -f notes.pdf
+pdfunite notes/*/*.pdf notes.pdf
+if [ $? != 0 ]; then
+  echo "concatenating notes into a single pdf failed. Please ensure the pdfunite utility is installed."
+else
+  echo
+  echo "Output written to notes.pdf"
+fi

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#(c) NaOH (2017) cc-by
+
+in=$1
+
+tmpf="$1.tex"
+
+echo "\\documentclass{article}" > "$tmpf"
+
+#packages (may need a better solution for this?
+echo "\\usepackage{amstext}" >> "$tmpf"
+echo "\\usepackage{amsmath}" >> "$tmpf"
+echo "\\usepackage{amssymb}" >> "$tmpf"
+echo "\\usepackage{amsfonts}" >> "$tmpf"
+echo "\\usepackage{bbm}" >> "$tmpf"
+echo "\\usepackage{enumerate}" >> "$tmpf"
+echo "\\usepackage{graphicx}" >> "$tmpf"
+echo "\\usepackage{mathrsfs}" >> "$tmpf"
+echo "\\usepackage{amsthm}" >> "$tmpf"
+
+#formatting
+echo "\\setlength{\\parindent}{0em}" >> "$tmpf"
+echo "\\setlength{\\parskip}{1em}" >> "$tmpf"
+
+echo "\\begin{document}" >> "$tmpf"
+
+pandoc "$1" -f markdown -t latex --no-wrap >> "$tmpf"
+
+echo "\end{document}" >> "$tmpf"
+
+pdflatex "$tmpf"

@@ -1,0 +1,15 @@
+# This script produces a pdf file (yyyy-mm-dd.pdf)
+
+cd "$(dirname "$0")"
+rm -f 2019-09-18.md.pdf
+
+../../marktex 2019-09-18.md
+
+if [ ! -f  ]; then
+  # failure
+  exit 1  
+fi
+rm -f 2019-09-18.pdf
+mv 2019-09-18.md.pdf 2019-09-18.pdf
+
+exit 0
