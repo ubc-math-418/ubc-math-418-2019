@@ -1,0 +1,17 @@
+# This script produces a pdf file for the preamble
+
+day=00-header
+
+cd "$(dirname "$0")"
+rm -f $day.md.pdf
+
+../../marktex $day.md
+
+if [ ! -f  ]; then
+  # failure
+  exit 1  
+fi
+rm -f $day.pdf
+mv $day.md.pdf $day.pdf
+
+exit 0
