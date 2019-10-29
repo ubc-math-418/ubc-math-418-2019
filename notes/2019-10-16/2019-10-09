@@ -1,0 +1,17 @@
+*Notes 2019-10-09*
+
+$X^2 + X + 1 \equiv 0 \pmod 7$ (we'll call this $f(x)$.
+
+$X_1 \equiv 2,4 \pmod 7$
+
+What about \$X^2 + X + 1 \equiv 0 \pmod{7^2}$ (Consider just solution $x=2$ for now; we're ignoring $x=4$).
+
+Must have $x_2 \equiv 2 + 7\ell$, $0 \leq \ell \leq 6$
+
+$$(2+7\ell)^2 + (2+7\ell) + 1 \equiv 0 \pmod {7^2}$$
+
+$$(2^2 + 2 + 1 + 7\ell(2\cdot 2 + 1 + (7\ell)^2 \equiv 0 \pmod{7^2}$$
+
+Note the first parenthesis here is $f(2)$, the second parenthesis is $f'(2)$
+
+$$7 + 7\ell \cdot 5 \equiv 0 \pmod{7^2} \Leftrightarrow 1 + 5\ell \equiv 0 \pmod 7 \Rightarrow \ell = 4$.
