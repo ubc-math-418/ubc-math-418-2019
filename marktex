@@ -19,11 +19,17 @@ echo "\\usepackage{graphicx}" >> "$tmpf"
 echo "\\usepackage{mathrsfs}" >> "$tmpf"
 echo "\\usepackage{amsthm}" >> "$tmpf"
 
+# Custom commands
+echo "\\newcommand{\ord}{\text{ord}}" >> "$tmpf"
+
 #formatting
 echo "\\setlength{\\parindent}{0em}" >> "$tmpf"
 echo "\\setlength{\\parskip}{1em}" >> "$tmpf"
 
+
+# Begin document
 echo "\\begin{document}" >> "$tmpf"
+
 
 pandoc "$1" -f markdown -t latex --no-wrap >> "$tmpf"
 
